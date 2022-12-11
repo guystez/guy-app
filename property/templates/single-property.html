@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% block content %} 
+
+<body style="background-color: burlywood">
+
+  <div class="text" style="color: white; font-size: large; font-style: oblique; font-weight: 400; background-color: rgb(218, 153, 32); border-radius: 10em; box-shadow:-11px 24px 62px -13px rgba(0,0,0,0.69) ; text-align:center ; position:absolute right20px ; ;" >
+    <p style="font-size:large ;" >Use the button INVESTMENT-RANGE </p>
+    <p style="font-size: large;">Find out how much the apartment will be worth and which projects will be built next to it.</p>
+  </div>
+
+<div class="row row-cols-1 row-cols-md-5 g-4" style="height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;">
+  
+      
+    
+    <div class="col" style=" box-shadow: -11px 24px 62px -13px rgba(0,0,0,0.69);border-radius: 2em;width: 100% ;height: 100%;" >
+      <div class="card" style=" border-radius: 2em; background-color: rgba(196, 230, 253, 0.945); ">
+        <div class="card-body">
+      
+          <h5 class="card-title" style="color: rgb(25, 48, 182); text-decoration: underline; font-style: oblique; font-size: xx-large;">{{property.property_type}}</h5>
+          </a>
+        <p class="card-text" style="font-weight: 600; font-style: oblique; font-size: larger;"> Room: {{property.room}} <br>
+            Floor: {{property.floor}}<br>
+            Square meter: {{property.square_meter}}<br>
+            Location: {{property.location}}<br>
+            Street: {{property.street}}<br>
+            Street number: {{property.street_number}}<br>
+            Price: {{property.price}}<br>
+            
+<br><br>
+<form name="num" id="num" >
+  <h4>Years</h4>
+  <select name="num">
+    
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+   
+    <option value='10'>10</option>
+  </select>
+  <input type="submit" value="Investment range" class="btn btn-primary" >
+
+</form>
+<br>
+            {% for project in final_proj %}
+            <p class="card-text" style="font-weight: 600; font-style: oblique;font-size: xx-large; text-decoration: underline">Project:<br>
+            </p>
+            <p class="card-text" style="font-weight: 600; font-style: oblique;font-size: larger">
+              Project: {{ project.type_project }}<br>
+              Size: {{project.size_project}} <br>
+              Company: {{project.company}}<br>
+              Value: {{project.value}}<br>
+              Location: {{project.location}}<br>
+              Street: {{project.street}}<br>
+              Street number: {{project.street_number}}<br>
+              Dates: {{project.dates}}<br>
+            </p>
+              <p style="background-color: green; color: antiquewhite;">Future price : {{project.final_price}}</p> <br> 
+              <br><br>
+       
+         {% endfor %}
+        </div>
+      </div>
+    </div>
+    
+</div>
+</body>
+
+{% endblock %}   
+
+
+
+
+
+ 
+
+
+
+
+
+

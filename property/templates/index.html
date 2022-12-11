@@ -1,0 +1,124 @@
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+   
+ 
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">        
+<meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Real-Estate-App</title>
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+        <link  rel="stylesheet" type="text/css" href="../../static/css/styles.css" />
+        
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    </head>
+    {% block content %}
+
+                <main>
+                    <div class="container-fluid px 4%">
+                        <h1 style="color: rgb(255, 255, 255) ;text-shadow :2px 15px 15px black;" class="mt-4" >Real-Estate</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li style="color: white ;font-weight: 500; text-shadow :2px 15px 15px black"  class="breadcrumb-item active">Welcome {{ user.username }}</li>
+                        </ol>
+                            <!-- ###### -->
+                          
+                            <div class="row" style="justify-content: space-around; ">
+                                <div class="col-sm-6" style="width: 400px;height: 400px; box-shadow: -11px 24px 62px -13px rgba(0,0,0,0.69); border-radius: 2em; ">
+                                    <div class="card" >
+                                        <div class="card-body" >
+                                    <h5 class="card-title" style="font-weight:750 ; font-style:oblique; font-size:x-large ; border-bottom: 2px solid wheat;">Tel-Aviv</h5>
+                                    <img src="{% static 'assets/img/tlv.jpg' %}" style="width:85% ;">
+                                    <a class="small text-white stretched-link" href="{% url 'property:telaviva' %}">TLV-Apartments</a>
+                                    
+                                        <h5 class="card-text" style="font-weight:750 ; font-style:oblique; font-size:large ;">See all the properties in Tel-Aviv</h5>
+                                      <a href="{% url 'property:telaviva' %}" class="btn btn-primary" style="font-weight:750 ; font-style:italic; font-size:large ;">TLV-Apartments</a>
+                                    </div>
+                                  </div>
+                                
+
+                                <br><br><br>
+
+
+                            </div>
+                            <div class="col-sm-6" style="width: 400px;height: 400px; box-shadow: -11px 24px 62px -13px rgba(0,0,0,0.69);border-radius: 2em">
+                              <div class="card">
+                                  <div class="card-body">
+                                    <h5 class="card-title" style="font-weight:750 ; font-style:oblique; font-size:x-large ; border-bottom: 2px solid wheat;">Ramat-Gan</h5>
+                                    <img src="{% static 'assets/img/ramatgan.jpeg' %}" width="80%" height="80%">
+                                    <a class="small text-white stretched-link" href="{% url 'property:ramatgan' %}">Ramat Gan Apartments</a>
+  
+                                    <p class="card-text" style="font-weight:750 ; font-style:oblique; font-size:large ;">See all the properties in Ramat-Gan</p>
+                                    <a href="{% url 'property:ramatgan' %}" class="btn btn-primary" style="font-weight:750 ; font-style:italic; font-size:large ;">Ramat-Gan Apartments</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+  
+  
+                              <br><br><br>
+
+
+                        <div class="row" style="justify-content: space-around">
+                            <div class="col-sm-6" style="width: 400px;height: 400px; box-shadow: -11px 24px 62px -13px rgba(0,0,0,0.69);border-radius: 2em">
+                                
+                                <div class="card"  >
+                               
+                                <a class="small text-white stretched-link" href="{% url 'property:all_projects' %}"></a>
+                                <div class="card-body" >
+                                    <h5 class="card-title" style="font-weight:750 ; font-style:oblique; font-size:x-large ; border-bottom: 2px solid wheat;">Projects</h5>
+                                    <img src="{% static 'assets/img/construction.jpeg' %}" style="width:100% ;">
+
+                                  
+                                  <p class="card-text" style="font-weight:750 ; font-style:oblique; font-size:large ;">See all the projects that are going to be built </p>
+                                  <a href="{% url 'property:all_projects' %}" class="btn btn-primary" style="font-weight:750 ; font-style:italic; font-size:large ;">All Projects</a>
+                                </div>
+                              </div>
+                            
+                        </div>
+                        <div class="col-sm-6" style="width: 400px;height: 400px; box-shadow: -11px 24px 62px -13px rgba(0,0,0,0.69);border-radius: 2em">
+                          <div class="card">
+                              <div class="card-body">
+                                <h5 class="card-title" style="font-weight:750 ; font-style:oblique; font-size:x-large ; border-bottom: 2px solid wheat;">Rishon-Lezion</h5>
+                                <img src="{% static 'assets/img/rishon.jpeg' %}" width="72%">
+                                <a class="small text-white stretched-link" href="{% url 'property:rishon' %}">Rishon-Lezion Apartments</a>
+
+                                <p class="card-text" style="font-weight:750 ; font-style:oblique; font-size:large ;">See all the properties in Rishon-Lezion</p>
+                                <a href="{% url 'property:rishon' %}" class="btn btn-primary"style="font-weight:750 ; font-style:italic; font-size:large ;" >Rishon-Lezion Apartments</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <br><br><br>
+
+                          <!-- ##### -->
+                       
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid px-4">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Copyright &copy; Real-Estate</div>
+                            <div>
+                                <a href="#">Privacy Policy</a>
+                                &middot;
+                                <a href="#">Terms &amp; Conditions</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+        </div>
+      
+
+       
+        
+{% endblock %}
+    </body>
+</html>
