@@ -69,6 +69,7 @@
     <table id="datatablesSimple">
       <thead>
         <tr>
+          <th>ID</th>
         <th>Rooms</th>
         <th>Floor</th>
         <th>Property Type</th>
@@ -82,6 +83,7 @@
          <tbody> 
     {% for i in city %}
     <tr>
+      <th style="color:blue ;"><a href="{% url 'property:single_apt' i.id %}" >{{ i.id }}</a></th>
     <th>{{i.room }}</th>
       <th>{{ i.floor }}</th>
         <th>{{ i.property_type }}</th>
